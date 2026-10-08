@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta name="descripción" content="Web sobre planetas">
-        <meta name="author" content="Juan Aguete">
-        <title>Información sobre planetas</title>
-        <link rel="stylesheet" href="planetas.css">
-    </head>
-    <!-- La clase "centrado" (definida en planetas.css) centra el contenido en vertical,
+
+<head>
+    <meta charset="utf-8">
+    <meta name="descripción" content="Web sobre planetas">
+    <meta name="author" content="Juan Aguete">
+    <title>Información sobre planetas</title>
+    <link rel="stylesheet" href="planetas.css">
+</head>
+<!-- La clase "centrado" (definida en planetas.css) centra el contenido en vertical,
          porque esta página tiene poco texto y se quedaba pegada arriba. -->
-    <body class="centrado">
-        <a href="https://www.youtube.com/watch?v=9vTC8co9YAA">Aquí tienes un enlace a un vídeo para más información.</a> <br>
 
-        <!-- BOTÓN VOLVER: ahora el enlace <a> tiene la clase "boton-volver", que le da aspecto de botón
+<body class="centrado">
+
+    <!-- EXPLICACIÓN: un párrafo normal que dice al visitante qué va a ver en el vídeo.
+         Cambia este texto por lo que realmente trate tu vídeo. -->
+    <p>
+        En este vídeo puedes ver más información sobre los planetas más extraños del universo:
+        cómo son, de qué están hechos y por qué son tan distintos a la Tierra.
+    </p>
+
+    <!-- VÍDEO INCRUSTADO (previsualización de YouTube)
+         Para incrustar un vídeo se usa la etiqueta <iframe>, que muestra una página dentro de otra.
+         Cómo conseguir la dirección (src):
+           1. Enlace normal del vídeo:  https://www.youtube.com/watch?v=9vTC8co9YAA
+           2. El código que va después de "v=" es el ID del vídeo: 9vTC8co9YAA
+           3. La dirección para incrustar es:  https://www.youtube.com/embed/  +  ID
+         Antes había "ABC123XYZ", que es un ID de ejemplo y no existe, por eso daba error.
+
+         Atributos:
+           class="video-youtube"  -> le da tamaño y estilo (está en planetas.css)
+           src                    -> la dirección del vídeo para incrustar
+           title                  -> descripción del vídeo (ayuda a lectores de pantalla)
+           referrerpolicy         -> evita el error de YouTube que a veces sale al incrustar vídeos
+           allowfullscreen        -> permite ver el vídeo a pantalla completa -->
+    <iframe class="video-youtube"
+        src="https://www.youtube.com/embed/9vTC8co9YAA"
+        title="Vídeo sobre los planetas"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+
+    <!-- ENLACE DE RESPALDO: por si el vídeo no carga, el visitante puede abrirlo directamente en YouTube -->
+    <p>
+        ¿No se ve el vídeo? <a href="https://www.youtube.com/watch?v=9vTC8co9YAA">Ábrelo en YouTube</a>
+    </p>
+
+    <!-- BOTÓN VOLVER: ahora el enlace <a> tiene la clase "boton-volver", que le da aspecto de botón
              (el diseño está en planetas.css). Ya no hace falta la etiqueta <button> ni las clases btn btn-primary. -->
-        <a class="boton-volver" href="index.html">Volver atrás</a>
+    <a class="boton-volver" href="index.html">Volver atrás</a>
 
-    </body>
+</body>
+
 </html>
