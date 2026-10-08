@@ -7,7 +7,9 @@
         <title>Introducción sobre los planetas</title>
         <link rel="stylesheet" href="planetas.css">
     </head>
-    <body>
+    <!-- La clase "centrado" (definida en planetas.css) centra el contenido en vertical,
+         porque esta página tiene poco texto y se quedaba pegada arriba. -->
+    <body class="centrado">
         <p>
             El universo está lleno de mundos que nunca hemos pisado, esferas silenciosas que giran en la oscuridad del espacio. 
             Cada planeta guarda una historia única: tormentas eternas, océanos ocultos, atmósferas imposibles. 
@@ -20,13 +22,9 @@
             <a href="planetasinfo.html">haz clic aquí</a>
         </p>
 
+        <!-- BOTÓN VOLVER: ahora el enlace <a> tiene la clase "boton-volver", que le da aspecto de botón
+             (el diseño está en planetas.css). Ya no hace falta la etiqueta <button> ni las clases btn btn-primary. -->
+        <a class="boton-volver" href="index.html">Volver atrás</a>
 
-
-
-
-        
-        <button><a class="btn btn-primary" href="index.html" role="button">Volver atrás</a></button>
-
-        
     </body>
 </html>

@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta name="descripción" content="Web sobre planetas">
-        <meta name="author" content="Juan Aguete">
-        <title>Las nebulosas</title>
-        <link rel="stylesheet" href="planetas.css">
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="descripción" content="Web sobre planetas">
+    <meta name="author" content="Juan Aguete">
+    <title>Las nebulosas</title>
+    <link rel="stylesheet" href="planetas.css">
+</head>
+
+<!-- La clase "centrado" (definida en planetas.css) centra el contenido en vertical,
+         porque esta página tiene poco texto y se quedaba pegada arriba. -->
+<body class="centrado">
+
+    <!-- La clase "imagen-grande" (definida en planetas.css) hace que esta imagen se vea a 800px en vez de 350px. -->
+    <img class="imagen-grande" src="nebulosas2.jpg" alt="Una nebulosa">
+    <p>Una nebulosa es una inmensa y espectacular nube de gas y polvo cósmico flotando en el vacío del espacio. Estas
+        maravillas visuales actúan como los grandes "viveros" del universo, ya que en su interior la gravedad condensa
+        la materia para dar nacimiento a nuevas estrellas. Sin embargo, también pueden formarse a partir de los restos
+        brillantes que deja una estrella al morir. Son, en esencia, las cunas y los cementerios de las estrellas.</p>
 
 
+    <!-- BOTÓN VOLVER: ahora el enlace <a> tiene la clase "boton-volver", que le da aspecto de botón
+             (el diseño está en planetas.css). Ya no hace falta la etiqueta <button> ni las clases btn btn-primary. -->
+    <a class="boton-volver" href="index.html">Volver atrás</a>
 
 
+</body>
 
-
-        
-        <button><a class="btn btn-primary" href="index.html" role="button">Volver atrás</a></button>
-
-        
-    </body>
 </html>

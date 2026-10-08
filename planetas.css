@@ -1,3 +1,107 @@
-img{
-    width: 250px;
+/* --- ESTILOS GENERALES DE LA PÁGINA --- */
+body {
+    /* Usamos tu imagen del espacio como fondo */
+    background-color: rgb(84, 43, 122); /* Color de respaldo: se ve mientras carga la imagen */
+    /* Imagen de fondo con una capa negra al 50% encima para que el texto se lea bien */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("espacio.jpg");
+    background-size: cover; /* Hace que la imagen ocupe toda la pantalla */
+    background-attachment: fixed; /* El fondo se queda quieto al hacer scroll */
+    
+    /* Cambiamos el tipo de letra y la ponemos blanca para que se lea bien en la oscuridad */
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff; 
+    
+    /* Un poco de espacio a los bordes y centramos todo por defecto */
+    padding: 20px;
+    text-align: center;
+    line-height: 1.6; /* Separa un poco las líneas de texto para leer mejor */
+}
+
+/* --- ESTILOS PARA LOS TÍTULOS --- */
+h1, h2, h3 {
+    color: #ffcc00; /* Un color amarillo/dorado espacial para que resalten */
+    text-shadow: 2px 2px 5px black; /* Una pequeña sombra negra para que destaquen sobre las estrellas */
+}
+
+/* --- ESTILOS PARA LOS PÁRRAFOS --- */
+p {
+    /* Fondo negro semitransparente para que el texto no se confunda con la imagen de fondo */
+    background-color: rgba(0, 0, 0, 0.7); 
+    max-width: 800px; /* Evita que las líneas de texto sean demasiado largas en pantallas grandes */
+    margin: 15px auto; /* Centra el bloque de texto */
+    padding: 15px; /* Espacio por dentro del cuadro */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* --- ESTILOS PARA LAS IMÁGENES (Modificando lo que ya tenías) --- */
+img {
+    width: 350px;
+    border-radius: 10px; /* Bordes suavemente redondeados */
+    margin: 15px; /* Espacio alrededor de la imagen */
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3); /* Le da un ligero brillo blanco alrededor */
+}
+
+/* --- ESTILOS PARA LOS ENLACES (El menú de navegación, etc.) --- */
+a {
+    color: #e4bb37; /* Un azul claro */
+    text-decoration: none; /* Le quita el subrayado feo de por defecto */
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+/* Efecto cuando pasas el ratón por encima del enlace */
+a:hover {
+    color: lch(#ffd966); /* Se vuelve amarillo */
+    text-decoration: underline; /* Aparece el subrayado */
+}
+
+
+/* ============================================================
+   NOVEDADES (añadidas después de lo que ya tenías)
+   ============================================================ */
+
+/* --- IMÁGENES GRANDES ---
+   Antes TODAS las imágenes medían 350px (por la regla "img" de arriba).
+   Esta clase solo se la ponemos a las imágenes que queremos más grandes
+   (el sistema solar y la nebulosa), así las demás no cambian. */
+.imagen-grande {
+    width: 800px;     /* Mismo ancho máximo que los párrafos, queda alineado */
+    max-width: 90%;   /* Si la pantalla es pequeña (móvil), la imagen se encoge para no salirse */
+}
+
+/* --- BOTÓN DE "VOLVER ATRÁS" ---
+   Antes era <button><a class="btn btn-primary">. Esas clases (btn, btn-primary)
+   son de una librería llamada Bootstrap que no estás usando, así que no hacían nada.
+   Ahora el propio enlace <a> se convierte en un botón con CSS. */
+.boton-volver {
+    display: inline-block;          /* Permite que el enlace tenga alto, ancho y márgenes como una caja */
+    margin: 20px 0 0 0;             /* Separación con lo de arriba (anula el margin: 0 10px de la regla "a") */
+    padding: 12px 28px;             /* Espacio entre el texto y el borde del botón */
+    background-color: #ffcc00;      /* Fondo amarillo, igual que los títulos */
+    color: #1a1a2e;                 /* Texto oscuro para que se lea bien sobre el amarillo */
+    border-radius: 25px;            /* Bordes muy redondeados: forma de píldora */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para que parezca que sobresale */
+    transition: background-color 0.3s, transform 0.3s; /* Hace que los cambios del hover sean suaves */
+}
+
+/* Cuando pasas el ratón por encima del botón */
+.boton-volver:hover {
+    background-color: #ffe066;      /* Se pone un amarillo más claro */
+    color: #1a1a2e;                 /* Mantenemos el texto oscuro (la regla "a:hover" lo cambiaba) */
+    text-decoration: none;          /* Quitamos el subrayado que ponía "a:hover" */
+    transform: translateY(-3px);    /* El botón sube un poquito, como si se levantara */
+}
+
+/* --- CENTRAR EL CONTENIDO EN PÁGINAS CORTAS ---
+   En las páginas con poco texto todo se quedaba pegado arriba y quedaba
+   un hueco enorme debajo. Con esta clase el contenido se centra en vertical.
+   Solo se la ponemos al <body> de las páginas cortas. */
+body.centrado {
+    margin: 0;                      /* Quitamos el margen por defecto del navegador para que no salga barra de scroll de más */
+    min-height: 100vh;              /* El body mide como mínimo el alto de la ventana (100vh = 100% del alto visible) */
+    box-sizing: border-box;         /* El padding de 20px cuenta dentro de esos 100vh, no se suma por fuera */
+    display: flex;                  /* Activa "flexbox": una forma sencilla de colocar los elementos hijos */
+    flex-direction: column;         /* Los elementos se apilan uno debajo de otro (en vertical) */
+    justify-content: center;        /* Los centra en vertical (arriba/abajo) */
+    align-items: center;            /* Los centra en horizontal (izquierda/derecha) */
 }
